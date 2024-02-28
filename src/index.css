@@ -9,26 +9,24 @@ body {
   font-family: 'Quicksand', sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: radial-gradient(#303b37, #1a1f1d);
+  background: #303b37;
   color: #e1eeeb;
-  min-height: 100vh;
 }
 
 #header {
   text-align: center;
   margin: 3rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center
 }
 
 
 #header img {
-  width: 5rem;
-  height: 5rem;
+  width: 2.5rem;
+  height: 2.5rem;
   object-fit: contain;
   background-color: transparent;
-}
-
-#header h1 {
-  font-size: 1.5rem;
 }
 
 #user-input {
