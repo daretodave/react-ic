@@ -13,6 +13,8 @@ function App() {
 
     const [options, setOptions] = useState(INITIAL_OPTIONS);
 
+    const isValid = options.duration >= 1;
+
     function handleOptionsChange(option, value) {
         setOptions(prevOptions => {
             value = parseInt(value || '0', 10);
@@ -28,7 +30,8 @@ function App() {
         <>
             <Header/>
             <Options initialOptions={INITIAL_OPTIONS} onOptionsChange={handleOptionsChange}/>
-            <Results options={options} />
+            {!isValid && <p class="center">Duration must be at least 1 year!</p>}
+            {isValid && <Results options={options} />}
         </>
     )
 }
