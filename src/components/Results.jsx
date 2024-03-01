@@ -1,4 +1,7 @@
-export default function Results({data, formatter}) {
+import {calculateInvestmentResults, formatter as defaultFormatter} from "../util/investment.js";
+
+export default function Results({options, formatter = defaultFormatter}) {
+    const data = calculateInvestmentResults(options);
     return <table id="result">
             <thead>
                 <tr>

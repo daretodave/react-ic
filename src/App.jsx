@@ -1,7 +1,6 @@
 import Header from "./components/Header.jsx";
 import Options from "./components/Options.jsx";
 import {useState} from "react";
-import {calculateInvestmentResults, formatter} from "./util/investment.js";
 import Results from "./components/Results.jsx";
 
 const INITIAL_OPTIONS = {
@@ -13,9 +12,6 @@ const INITIAL_OPTIONS = {
 function App() {
 
     const [options, setOptions] = useState(INITIAL_OPTIONS);
-
-    console.log(options)
-    const data = calculateInvestmentResults(options);
 
     function handleOptionsChange(option, value) {
         setOptions(prevOptions => {
@@ -32,7 +28,7 @@ function App() {
         <>
             <Header/>
             <Options initialOptions={INITIAL_OPTIONS} onOptionsChange={handleOptionsChange}/>
-            <Results data={data} formatter={formatter}/>
+            <Results options={options} />
         </>
     )
 }

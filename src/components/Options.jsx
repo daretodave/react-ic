@@ -5,6 +5,7 @@ export default function Options({onOptionsChange, initialOptions}) {
         expectedReturn,
         duration
     } = initialOptions;
+
     function handleOptionsChange(event) {
         const {id, value} = event.target;
 
@@ -14,21 +15,23 @@ export default function Options({onOptionsChange, initialOptions}) {
 
     return <div id="user-input">
         <div className="input-group">
-            <label htmlFor="initial-investment">Initial Investment</label>
-            <input type="number" id="initialInvestment" value={initialInvestment} onChange={handleOptionsChange}/>
-        </div>
-        <div className="input-group">
-            <label htmlFor="annual-investment">Annual Investment</label>
-            <input type="number" id="annualInvestment" value={annualInvestment} onChange={handleOptionsChange}/>
+            <p>
 
-        </div>
-        <div className="input-group">
-            <label htmlFor="expected-return">Expected Return</label>
-            <input type="number" id="expectedReturn" value={expectedReturn} onChange={handleOptionsChange}/>
-        </div>
-        <div className="input-group">
-            <label htmlFor="duration">Duration (Years)</label>
-            <input type="number" id="duration" value={duration} onChange={handleOptionsChange}/>
+                <label htmlFor="initial-investment">Initial Investment</label>
+                <input type="number" required id="initialInvestment" value={initialInvestment} onChange={handleOptionsChange}/>
+            </p>
+            <p>
+                <label htmlFor="annual-investment">Annual Investment</label>
+                <input type="number" required id="annualInvestment" value={annualInvestment} onChange={handleOptionsChange}/>
+            </p>
+            <p>
+                <label htmlFor="expected-return">Expected Return</label>
+                <input type="number" required id="expectedReturn" value={expectedReturn} onChange={handleOptionsChange}/>
+            </p>
+            <p>
+                <label htmlFor="duration">Duration (Years)</label>
+                <input type="number" required id="duration" value={duration} onChange={handleOptionsChange}/>
+            </p>
         </div>
     </div>
 }
